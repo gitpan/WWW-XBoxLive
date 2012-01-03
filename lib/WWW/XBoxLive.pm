@@ -3,7 +3,7 @@ use warnings;
 
 package WWW::XBoxLive;
 {
-  $WWW::XBoxLive::VERSION = '1.120020';
+  $WWW::XBoxLive::VERSION = '1.120030';
 }
 
 # ABSTRACT: Get XBox Live Gamercard information
@@ -100,47 +100,50 @@ sub _parse_gamercard {
 
     # games
     my @recent_games;
-    for my $i ( 1 .. 5 ) {
+    my $i = 1;
+    while (
         my $title = $tree->findvalue(
-            '//ol[@id="PlayedGames"]/li[' . $i . ']/a/span[@class="Title"]' );
-        if ($title) {
-            my $last_played =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="LastPlayed"]' );
-            my $earned_gamerscore =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="EarnedGamerscore"]' );
-            my $available_gamerscore =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="AvailableGamerscore"]' );
-            my $earned_achievements =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="EarnedAchievements"]' );
-            my $available_achievements =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="AvailableAchievements"]' );
-            my $percentage_complete =
-              $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
-                  . $i
-                  . ']/a/span[@class="PercentageComplete"]' );
+            '//ol[@id="PlayedGames"]/li[' . $i . ']/a/span[@class="Title"]'
+        )
+      )
+    {
+        my $last_played =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="LastPlayed"]' );
+        my $earned_gamerscore =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="EarnedGamerscore"]' );
+        my $available_gamerscore =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="AvailableGamerscore"]' );
+        my $earned_achievements =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="EarnedAchievements"]' );
+        my $available_achievements =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="AvailableAchievements"]' );
+        my $percentage_complete =
+          $tree->findvalue( '//ol[@id="PlayedGames"]/li[' 
+              . $i
+              . ']/a/span[@class="PercentageComplete"]' );
 
-            my $game = WWW::XBoxLive::Game->new(
-                available_achievements => $available_achievements,
-                available_gamerscore   => $available_gamerscore,
-                earned_achievements    => $earned_achievements,
-                earned_gamerscore      => $earned_gamerscore,
-                last_played            => $last_played,
-                percentage_complete    => $percentage_complete,
-                title                  => $title,
-            );
+        my $game = WWW::XBoxLive::Game->new(
+            available_achievements => $available_achievements,
+            available_gamerscore   => $available_gamerscore,
+            earned_achievements    => $earned_achievements,
+            earned_gamerscore      => $earned_gamerscore,
+            last_played            => $last_played,
+            percentage_complete    => $percentage_complete,
+            title                  => $title,
+        );
 
-            push @recent_games, $game;
-        }
+        push @recent_games, $game;
+        $i++;
     }
 
     # to ensure we do not have memory leaks
@@ -185,7 +188,7 @@ WWW::XBoxLive - Get XBox Live Gamercard information
 
 =head1 VERSION
 
-version 1.120020
+version 1.120030
 
 =head1 SYNOPSIS
 
@@ -194,9 +197,9 @@ version 1.120020
   my $gamercard = $xbox_live->get('BrazenStraw3');
 
   say $gamercard->name;
-  say $gamercard->online_status;
+  say $gamercard->bio;
 
-  for my $game ($gamercard->recent_games){
+  for my $game (@{ $gamercard->recent_games }){
     say $game->title;
     say $game->last_played;
   }
@@ -213,7 +216,21 @@ Create a new WWW::XBoxLive object. Optionally takes a region argument, which def
 
 =head2 get_gamercard( $gamertag )
 
-Get a gamercard. Returns an WWW::XBoxLive::Gamercard object.
+Get a gamercard. Returns an L<WWW::XBoxLive::Gamercard> object.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<WWW::XBoxLive::Gamercard>
+
+=item *
+
+L<WWW::XBoxLive::Game>
+
+=back
 
 =head1 CREDITS
 

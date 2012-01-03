@@ -27,4 +27,4 @@ resources:
   bugtracker: https://github.com/andrewrjones/perl5-WWW-XBoxLive/issues
   homepage: https://github.com/andrewrjones/perl5-WWW-XBoxLive
   repository: https://github.com/andrewrjones/perl5-WWW-XBoxLive.git
-version: 1.120020
+version: 1.120030
