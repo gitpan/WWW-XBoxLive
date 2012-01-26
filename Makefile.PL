@@ -9,12 +9,12 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Get XBox Live Gamercard information",
+  "ABSTRACT" => "Get XBox Live Gamercard information\r",
   "AUTHOR" => "Andrew Jones <andrew\@arjones.co.uk>",
   "BUILD_REQUIRES" => {
     "English" => 0,
     "FindBin" => 0,
-    "Test::More" => 0,
+    "Test::More" => "0.88",
     "Test::WWW::Mechanize" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.120030",
+  "VERSION" => "1.120260",
   "test" => {
     "TESTS" => "t/*.t"
   }

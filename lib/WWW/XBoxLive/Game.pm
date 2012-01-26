@@ -3,7 +3,7 @@ use warnings;
 
 package WWW::XBoxLive::Game;
 {
-  $WWW::XBoxLive::Game::VERSION = '1.120030';
+  $WWW::XBoxLive::Game::VERSION = '1.120260';
 }
 
 # ABSTRACT: Represents an XBox Live game
@@ -30,7 +30,7 @@ WWW::XBoxLive::Game - Represents an XBox Live game
 
 =head1 VERSION
 
-version 1.120030
+version 1.120260
 
 =head1 SYNOPSIS
 

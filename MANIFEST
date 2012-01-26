@@ -17,6 +17,7 @@ t/15_live.t
 t/author-critic.t
 t/author-pod-spell.t
 t/release-kwalitee.t
+t/release-no-smart-comments.t
 t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

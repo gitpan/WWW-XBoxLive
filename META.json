@@ -1,5 +1,5 @@
 {
-   "abstract" : "Get XBox Live Gamercard information",
+   "abstract" : "Get XBox Live Gamercard information\r",
    "author" : [
       "Andrew Jones <andrew@arjones.co.uk>"
    ],
@@ -33,7 +33,7 @@
          "requires" : {
             "English" : 0,
             "FindBin" : 0,
-            "Test::More" : 0,
+            "Test::More" : "0.88",
             "Test::WWW::Mechanize" : 0
          }
       }
@@ -50,6 +50,6 @@
          "web" : "https://github.com/andrewrjones/perl5-WWW-XBoxLive"
       }
    },
-   "version" : "1.120030"
+   "version" : "1.120260"
 }
 
