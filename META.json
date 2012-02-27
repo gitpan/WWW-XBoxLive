@@ -4,7 +4,7 @@
       "Andrew Jones <andrew@arjones.co.uk>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
+   "generated_by" : "Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.113640",
    "license" : [
       "perl_5"
    ],
@@ -33,6 +33,7 @@
          "requires" : {
             "English" : 0,
             "FindBin" : 0,
+            "Net::Ping" : 0,
             "Test::More" : "0.88",
             "Test::WWW::Mechanize" : 0
          }
@@ -50,6 +51,6 @@
          "web" : "https://github.com/andrewrjones/perl5-WWW-XBoxLive"
       }
    },
-   "version" : "1.120260"
+   "version" : "1.120580"
 }
 
