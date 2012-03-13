@@ -4,8 +4,10 @@ author:
   - 'Andrew Jones <andrew@arjones.co.uk>'
 build_requires:
   English: 0
+  File::Find: 0
+  File::Temp: 0
   FindBin: 0
-  Net::Ping: 0
+  Net::Ping: 2.33
   Test::More: 0.88
   Test::WWW::Mechanize: 0
 configure_requires:
@@ -28,4 +30,4 @@ resources:
   bugtracker: https://github.com/andrewrjones/perl5-WWW-XBoxLive/issues
   homepage: https://github.com/andrewrjones/perl5-WWW-XBoxLive
   repository: https://github.com/andrewrjones/perl5-WWW-XBoxLive.git
-version: 1.120580
+version: 1.120730

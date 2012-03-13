@@ -13,8 +13,10 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Andrew Jones <andrew\@arjones.co.uk>",
   "BUILD_REQUIRES" => {
     "English" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
     "FindBin" => 0,
-    "Net::Ping" => 0,
+    "Net::Ping" => "2.33",
     "Test::More" => "0.88",
     "Test::WWW::Mechanize" => 0
   },
@@ -33,7 +35,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.120580",
+  "VERSION" => "1.120730",
   "test" => {
     "TESTS" => "t/*.t"
   }
