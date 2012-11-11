@@ -3,7 +3,7 @@ use warnings;
 
 package WWW::XBoxLive::Gamercard;
 {
-  $WWW::XBoxLive::Gamercard::VERSION = '1.120730';
+  $WWW::XBoxLive::Gamercard::VERSION = '1.123160';
 }
 
 # ABSTRACT: Represents an XBox Live Gamercard
@@ -62,7 +62,7 @@ WWW::XBoxLive::Gamercard - Represents an XBox Live Gamercard
 
 =head1 VERSION
 
-version 1.120730
+version 1.123160
 
 =head1 SYNOPSIS
 
